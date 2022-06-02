@@ -111,6 +111,8 @@ input[type="submit"]:active {
 #logo:hover {
     color: cornflowerblue;
 }
-.btn{
-    margin-left: 5rem;
+
+.invalid{
+    border: 1px solid red;
+
 }
