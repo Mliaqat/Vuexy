@@ -29,7 +29,7 @@ function Team(props) {
       id: 3,
       name: "usama",
       level: "S. developer",
-      age: 42,
+      age: 22,
       img: "/image/profile.png",
     },
     {
@@ -73,6 +73,7 @@ useEffect(()=>{
         img: "/image/profile.png",
       };
       setdata((data) => [...data, adddata]);
+      setfilterdata((data) => [...data, adddata]);
 
       settoogle(!toggle);
     }
@@ -90,7 +91,9 @@ useEffect(()=>{
   }
 
   const deleteitem = (id) => {
-    setdata(data.filter((data) => data.id !== id));
+    console.log(id)
+    setfilterdata(data.filter((data) => data.id !== id));
+    console.log(filterdata)
   };
 
   const sort = () => {
@@ -115,6 +118,7 @@ useEffect(()=>{
               <input
                 type="number"
                 value={filter}
+                placeholder="Enter Your age"
                 onChange={handlefilter}
               ></input>
               <button className="btn btn-success ms-4" onClick={sort}>
